@@ -1,9 +1,6 @@
-window.addEventListener("scroll", function() {
-    var menu = document.getElementById("menu");
-    
-    if (window.pageYOffset > 0) {
-      menu.style.backgroundImage = "none";
-    } else {
-    menu.style.backgroundColor =  red; /* Reemplaza "imagen-fondo.jpg" con la URL de tu imagen de fondo */
-    }
-  });
+window.addEventListener('scroll', function() {
+  const header = document.querySelector('.header');
+  const contenedor = document.querySelector('.container');
+  header.classList.toggle("abajo", window.scrollY > 50);
+  contenedor.classList.toggle("abajo", window.scrollY > 50);
+});
