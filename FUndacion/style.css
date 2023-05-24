@@ -1,166 +1,253 @@
  /* Estilos generales */
-*{
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
+ * {
+     font-family: 'Open Sans', sans-serif;
+     margin: 0;
+     padding: 0;
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ /* Hero */
+
+ .container {
+     display: flex;
+     justify-content: space-between;
+     padding: 5px 100px;
+     position: relative;
+     z-index: 2;
+     transition: opacity 0.5s ease-in-out;
+ }
+
+ .divisor {
+     border-top: 20px solid transparent;
+     height: 3px;
+     max-width: 200px;
+     padding: 10px;
+     margin: 20px auto 0 auto;
+     background-color: blueviolet;
+ }
+
+ .container.abajo {
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ .container_logo {
+     height: 150px;
+     display: flex;
+     align-items: center;
+ }
+
+ .container_img {
+     height: 350px;
+     width: auto;
+ }
+
+ .container_contacto {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .container_telefono {
+     display: flex;
+ }
+
+ /* Estilos del Header */
+
+ .header {
+     position: fixed;
+     width: 100%;
+     background-color: transparent;
+     z-index: 2;
+
+ }
+
+ .header.abajo {
+     background-color: #ffffff;
+     top: 0;
+     transition: 0.5s ease, top 0.9s ease;
+ }
+
+ .menu {
+     padding: 10px;
+ }
+
+ .menu_lista {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     list-style: none;
+     padding: 0 90px;
+     font-weight: bold;
+ }
+
+ .menu_items,
+ .menu_items-dropdown {
+     position: relative;
+ }
+
+ .menu_items-dropdown .menu_lista-dropdown {
+     display: none;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     width: 300px;
+     background-color: aqua;
+     border-radius: 10px;
+
+ }
+
+ .menu_link {
+     text-decoration: none;
+     color: black;
+
+ }
+
+ .menu_lista-dropdown:hover {
+     display: none;
+ }
+
+ .menu_items-dropdown {
+     display: block;
+     padding: 10px;
+ }
+
+ .menu_items-dropdown:hover>.menu_lista-dropdown {
+     display: block;
+     background-color: #ffffff;
+ }
+
+ .menu_items-dropdown:hover>.menu_link:last-child {
+     color: hsl(298, 80%, 74%);
+ }
+
+ .hero {
+     display: flex;
+     justify-content: center;
+     position: absolute;
+     z-index: -1;
+     top: 0;
+     left: 0;
+
+ }
+
+ .hero img {
+     width: 100%;
+     height: auto;
+ }
+
+ .sobre {
+     margin-top: 400px;
+     text-align: center;
+     width: 100%;
+     background-color: beige;
+ }
+
+ .cartas {
+     width: 100%;
+     display: flex;
+     overflow: hidden;
+ }
+
+ .carta {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     margin: 20px;
+     transition: 0.5s;
+ }
+
+ .carta:hover {
+     cursor: pointer;
+     width: 105%;
+     transition: 0.5s;
+ }
+
+ figure {
+     display: flex;
+     justify-content: center;
+     margin: 10px;
+     height: 200px;
+     width: 100%;
+ }
+
+ .carta img {
+     width: 100%;
+     height: auto;
+ }
+
+ /* REDES Sociales*/
+
+ .social-icons {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     z-index: 100;
+     background-color: hsl(298, 80%, 74%);
+     padding: 10px;
+     border-radius: 30px;
+ }
+
+ .social-icons img {
+     width: 30px;
+     height: 30px;
+     margin-right: 10px;
+     transition: transform 0.3s ease;
+ }
+
+ .social-icons img:hover {
+     transform: scale(1.2);
+ }
+
+ @media screen and (max-width: 700px) {
+     .social-icons {
+         display: none;
+     }
+ }
+ /* Separador */
+ .separador{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    height: 100px;
+    width: 600px;
+    align-items: center;
+    align-content: center;
 }
 
-html{
-    scroll-behavior: smooth;
+.separador_linea{
+    height: 200px;
+    flex-grow: 1;
+    height: 1px;
+    background-color: #fb00ae;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-/* Hero */
-
-.container{
+/* informacion cancer*/
+.Info {
     display: flex;
     justify-content: space-between;
-    padding: 5px 100px;
-    position: relative;
-    z-index: 2;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.container.abajo {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.container_logo{
-    height: 150px;
-    display: flex;
-    align-items: center;
-}
-
-.container_img{
-    height: 350px;
     width: auto;
-}
+  }
+  
+  .Info-Can {
+    opacity: 0;
+    transform: translateY(20px);
+    border: #fb00ae solid 3px;
+    flex: 1;
 
-.container_contacto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.container_telefono{
-    display: flex;
-}
-
-/* Estilos del Header */
-
-.header{
-    position: fixed;
-    width: 100%;
-    background-color: transparent;
-    z-index: 2;
-}
-
-.header.abajo{
-    background-color: #ffffff;
-    top: 0;
-    transition: 0.5s ease, top 0.9s ease;
-}
-
-.menu{
-    padding: 10px;
-}
-
-.menu_lista{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    padding: 0 90px;
-    font-weight: bold;
-}
-
-.menu_items, .menu_items-dropdown{
-    position: relative;
-}
-
-.menu_items-dropdown .menu_lista-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 300px;
-    background-color: aqua;
-}
-
-.menu_link{
-    text-decoration: none;
-    color: #000000;
-}
-
-.menu_lista-dropdown:hover{
-    display: none;
-}
-
-.menu_items-dropdown{
-    display: block;
-    padding: 10px;
-}
-
-.menu_items-dropdown:hover > .menu_lista-dropdown{
-    display: block;
-    background-color: #ffffff;
-}
-
-.menu_items-dropdown:hover > .menu_link:last-child {
-    color: #016287;
-}
-
-.hero{
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-}
-
-.hero img{
-    width: 100%;
-    height: auto;
-}
-
-.sobre{
-    margin-top: 360px;
-    text-align: center;
-    width: 100%;
-}
-
-.cartas{
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-}
-
-.carta{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 20px;
-    transition: 0.5s;
-}
-
-.carta:hover{
-    cursor: pointer;
-    width: 105%;
-    transition: 0.5s;
-}
-
-figure{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    height: 200px;
-    width: 100%;
-}
-
-.carta img{
-    width: 100%;
-    height: auto;
-}
+  }
+  .imagenesInfo{
+   width: 95%;
+   height: auto;
+   margin: 5px;
+  }
+    
+ 
+  
